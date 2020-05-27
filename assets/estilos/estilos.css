@@ -1,0 +1,9 @@
+@media (max-width: 767px) {
+    .input-group {
+        margin-bottom: 5px;
+    }
+
+    #novoItem {
+        width: 100%;
+    }
+}
