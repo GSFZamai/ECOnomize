@@ -1,8 +1,8 @@
 # [Economize](https://gsfzamai.github.io/economize/)
-A idéia é facilitar a decisão de compras do consumidor, 
-auxiliando na comparação de preços dos produtos, levando em consideração o volume e valor de cada embalagem.
-Conforme meus avanços no estudo irei implementando novas funcionalizades.
-Por hora criado um design responsivo com Bootstrap para facilitar o acesso em celulares.
+A idéia inicial é facilitar a decisão de compras do consumidor, auxiliando na comparação de preços dos produtos. 
+Levando em consideração a quantidade e valor de cada embalagem, será calculado o valor unitário de cada produto.
+Futuramente serão implementadas novas funcionabilidades e aperfeiçoamentos para aplicação novos conhecimentos adquiridos.
+Por hora criado um design responsivo com Bootstrap para facilitar o acesso em celulares, tablets e desktops.
 
 Qualquer sugestão de melhoria e implementação, pode me contactar.
 
