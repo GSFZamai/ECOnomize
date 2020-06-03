@@ -84,8 +84,29 @@
 
     function carregaItens() {
         let itens = [];
+        let tBody = document.getElementById('tabela')
+        tBody.innerHTML = '';
 
-        itens = bd.listarItens();
+      
 
-        itens.forEach(item => console.log(item.nome, item.valorUnitario))
+        itens = bd.listarItens();        
+
+        itens.sort((a,b) => Math.floor((a.valorUnitario - b.valorUnitario)));
+
+        itens.forEach(item => { 
+                let row = document.createElement('tr');              
+
+                for (let i in item) {
+                    let td = document.createElement('td')
+
+                    if (i === "unidade") {
+                        continue;
+                    }
+
+                    td.innerHTML = item[i];
+                    row.appendChild(td);
+                }
+                tBody.appendChild(row);
+            })
+
     }
