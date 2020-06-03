@@ -1,6 +1,6 @@
 @media (max-width: 767px) {
-    .input-group {
-        margin-bottom: 5px;
+    .form-control {
+        margin-bottom: 10px;
     }
 
     .btn {
