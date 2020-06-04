@@ -75,13 +75,13 @@
         )
 
         if (item.validaDados()) {
-            bd.registraItem(item);
-
+            bd.registraItem(item);    
+          
             nome.value = '';
             qtd.value = '';
             valor.value = '';
             unidade.value = '';
-
+            
             carregaItens();
         }else {
             console.log('falta algo');
@@ -105,5 +105,3 @@
             linhaItem.insertCell(2).innerHTML = item.valor;
             linhaItem.insertCell(3).innerHTML = item.valorUnitario;
         })
-
-    }
