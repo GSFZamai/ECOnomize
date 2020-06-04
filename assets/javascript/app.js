@@ -76,6 +76,12 @@
 
         if (item.validaDados()) {
             bd.registraItem(item);
+
+            nome.value = '';
+            qtd.value = '';
+            valor.value = '';
+            unidade.value = '';
+
             carregaItens();
         }else {
             console.log('falta algo');
@@ -85,18 +91,19 @@
     function carregaItens() {
         let itens = [];
         let listaItens = document.getElementById('tabela')
-        
+        listaItens.innerHTML = '';
+
         itens = bd.listarItens();        
 
         itens.sort((a,b) => Math.floor((a.valorUnitario - b.valorUnitario)));
 
         itens.forEach(item => { 
-                let linhaItem = listaItens.insertRow();              
-                
-                linhaItem.insertCell(0).innerHTML = item.nome;
-                linhaItem.insertCell(1).innerHTML = item.qtd;
-                linhaItem.insertCell(2).innerHTML = item.valor;
-                linhaItem.insertCell(3).innerHTML = item.valorUnitario;
-            })
+            let linhaItem = listaItens.insertRow();              
+            
+            linhaItem.insertCell(0).innerHTML = item.nome;
+            linhaItem.insertCell(1).innerHTML = item.qtd;
+            linhaItem.insertCell(2).innerHTML = item.valor;
+            linhaItem.insertCell(3).innerHTML = item.valorUnitario;
+        })
 
     }
