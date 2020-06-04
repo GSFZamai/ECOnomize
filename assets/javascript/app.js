@@ -75,7 +75,13 @@
         )
 
         if (item.validaDados()) {
-            bd.registraItem(item);
+            bd.registraItem(item);    
+          
+            nome.value = '';
+            qtd.value = '';
+            valor.value = '';
+            unidade.value = '';
+            
             carregaItens();
         }else {
             console.log('falta algo');
@@ -84,29 +90,18 @@
 
     function carregaItens() {
         let itens = [];
-        let tBody = document.getElementById('tabela')
-        tBody.innerHTML = '';
-
-      
+        let listaItens = document.getElementById('tabela')
+        listaItens.innerHTML = '';
 
         itens = bd.listarItens();        
 
         itens.sort((a,b) => Math.floor((a.valorUnitario - b.valorUnitario)));
 
         itens.forEach(item => { 
-                let row = document.createElement('tr');              
-
-                for (let i in item) {
-                    let td = document.createElement('td')
-
-                    if (i === "unidade") {
-                        continue;
-                    }
-
-                    td.innerHTML = item[i];
-                    row.appendChild(td);
-                }
-                tBody.appendChild(row);
-            })
-
-    }
+            let linhaItem = listaItens.insertRow();              
+            
+            linhaItem.insertCell(0).innerHTML = item.nome;
+            linhaItem.insertCell(1).innerHTML = item.qtd;
+            linhaItem.insertCell(2).innerHTML = item.valor;
+            linhaItem.insertCell(3).innerHTML = item.valorUnitario;
+        })
