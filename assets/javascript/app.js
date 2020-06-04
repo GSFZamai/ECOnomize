@@ -105,3 +105,4 @@
             linhaItem.insertCell(2).innerHTML = item.valor;
             linhaItem.insertCell(3).innerHTML = item.valorUnitario;
         })
+    }
