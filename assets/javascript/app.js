@@ -52,10 +52,15 @@
                     continue
                 }
 
+                item.id = i;
                 itens.push(item);
             }
 
             return itens;
+        }
+
+        removeItem(id) {
+            localStorage.removeItem(id);
         }
     }
 
@@ -104,5 +109,15 @@
             linhaItem.insertCell(1).innerHTML = item.qtd;
             linhaItem.insertCell(2).innerHTML = item.valor;
             linhaItem.insertCell(3).innerHTML = item.valorUnitario;
+
+            let button = document.createElement('button');
+            button.className = "btn btn-danger";
+            button.innerHTML= '<i class="fas fa-times"></i>';
+            button.onclick = () => {
+               bd.removeItem(item.id);
+               carregaItens();
+            }
+
+            linhaItem.insertCell(4).append(button)
         })
     }
